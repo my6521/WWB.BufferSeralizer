@@ -18,6 +18,7 @@ namespace WWB.BufferSerializer.Relection
                 var entityProperty = new FastProperty(property);
                 Properties.Add(entityProperty);
             }
+            Properties = Properties.OrderBy(x => x.Order).ToList();
         }
 
         private static PropertyInfo[] GetProperties(Type type)

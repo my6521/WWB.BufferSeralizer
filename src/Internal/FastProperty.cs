@@ -16,6 +16,7 @@ namespace WWB.BufferSerializer.Internal
         public FastTypeCode ArgTypeCode { get; private set; }
         public int ArgSize { get; private set; }
         public Type TypeHandler { get; private set; }
+        public int Order { get; }
 
         public bool HasLengthPlace => Size == 0;
 
@@ -41,6 +42,7 @@ namespace WWB.BufferSerializer.Internal
                     LengthPlaceSize = FastPropertyAttribute.LengthPlaceSize;
                     ArgSize = FastPropertyAttribute.ArgSize;
                     TypeHandler = FastPropertyAttribute.TypeHandler;
+                    Order = FastPropertyAttribute.Order;
                 }
             }
         }
